@@ -1,0 +1,13 @@
+.video-detail {
+  height: 400px;
+  width: 49%;
+  border: 1px solid yellow;
+  float: left;
+  border-radius: 20px;
+  margin-right: .5px;
+  
+}
+
+p {
+  margin-top: 20px;
+}

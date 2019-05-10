@@ -1,0 +1,4 @@
+export const REQUEST_VIDEOS = 'REQUEST_VIDEOS';
+export const SELECT_VIDEO = 'SELECT_VIDEO';
+export const REQUEST_KVIDEOS = 'REQUEST_KVIDEOS';
+export const SELECT_KVIDEO = 'SELECT_KVIDEO';
