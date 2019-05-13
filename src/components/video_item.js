@@ -13,6 +13,7 @@ class VideoItem extends Component {
 
     return (
        <div onClick={ () => selectVideo(video)} className="video-item" >
+              console.log('herewego')
             <img className='video-image' src={url} alt={video.snippet.description}/>
         <div className='content'> 
             <div className='header'>{title}</div>

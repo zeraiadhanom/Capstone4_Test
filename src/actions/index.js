@@ -20,13 +20,24 @@ export function selectVideo(video) {
     return { type: SELECT_VIDEO, payload: video}
 }
 
-  
-export const requestKvideos = (term) => (dispatch) => {
-    YTSearch({key: API_KEY, term}, videos => {
+let baseURL = `https://www.googleapis.com/youtube/v3/search?`
+const options = {
+    part:'snippet',
+    q:'children',
+    type:'video',
+    order:'rating',
+    safeSearch:'restrict',
+    relatedToVideoId:'kwgQ3t7X3JQ',
+    maxResults:'10'
+ }
+export const requestKvideos = (baseURL, options) => (dispatch) => {
+    
+    YTSearch({key: API_KEY, baseURL, options}, videos => {
         const payload = {
             videos,
             selectVideo: videos[0]
         }
+
         dispatch({type: REQUEST_KVIDEOS, payload })
     })
 }
