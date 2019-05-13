@@ -22,4 +22,18 @@ class VideoItem extends Component {
 }
 }
 
-export default connect(null, actions)(VideoItem)
+class VideoKitem extends Component {
+  render() {
+    const {video, selectKvideo} = this.props;
+    const {snippet:{title, thumbnails:{default:{url}}}} = video;
+    return(
+      <div onClick={ () => selectKvideo(video)} className="video-item">
+         <div className='content'>
+           <div className='header'>{title}</div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default connect(null, actions)(VideoItem)(VideoKitem);

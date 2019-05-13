@@ -1,6 +1,7 @@
 import React from 'react'
 import './video_list.css'
-import VideoItem from './video_item'
+import VideoItem  from './video_item'
+import VideoKitem from './video_item'
 
 
 export default function VideoList({videos}) {
@@ -16,4 +17,15 @@ export default function VideoList({videos}) {
           {videosList}
         </section>
       );
+    }
+
+    export function VideoKlist ({videos}) {
+      const videosKlist = videos.map(video => 
+        <VideoKitem key={video.etag} video={video} />
+      )
+      return (
+        <section className="video-List" >
+             {videosKlist}
+        </section>
+      )
     }

@@ -28,6 +28,7 @@ class App extends Component {
             <li><a href="/Favorite Videos/">Favorite Videos</a></li>
             <li><a href="/Kids/">Kids</a></li>
          </ul>
+         {this.props.children}
        </div>
        </header>
 
@@ -42,6 +43,21 @@ class App extends Component {
     )
   }
 }
+export class Kids extends React.Component {
+    render() {
+      return(
+        <h1>Kids</h1>
+      )
+    }
+}
+
+export class FavoriteVideos extends React.Component {
+     render() {
+       return(
+         <h1>Favorite Videos</h1>
+       )
+     }
+}
 
 function mapStateToProps(state) {
   
@@ -51,11 +67,7 @@ function mapStateToProps(state) {
   };
 }
 
-/*unction mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(dispatch, Action)
-  };
-} */
+
 
 export default connect(mapStateToProps, actions)(App);
 
