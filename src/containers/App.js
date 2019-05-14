@@ -1,16 +1,17 @@
 
 import React, {Component} from 'react';
-
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import SearchBar from '../components/searchBar';
 import VideoList from '../components/video_list';
 import VideoDetail from '../components/video_detail';
+import KidsVideo from '../components/KidsVideo';
 import './App.css';
 
 class App extends Component {
   componentWillMount() {
     this.props.requestVideos('Eritrea')
+    this.props.requestKvideos('children')
   }
   render() {
     const {videos, selectedVideo} = this.props;
@@ -26,19 +27,21 @@ class App extends Component {
          <ul className="nav">
            <li><a href="/">Home</a></li>
             <li><a href="/Favorite Videos/">Favorite Videos</a></li>
-            <li><a href="/Kids/">Kids</a></li>
+            <li>
+              <KidsVideo />
+            <a href="KidsVideo">Kids</a></li>
          </ul>
          {this.props.children}
        </div>
        </header>
 
        <section className="searchBar">
-         <SearchBar />
+           <SearchBar />
        </section >
         <section className="main">
-        <VideoDetail video={selectedVideo} />
-         <VideoList videos={videos} />
-         </section>   
+           <VideoDetail video={selectedVideo} />
+            <VideoList videos={videos} />
+         </section>  
         </div>
     )
   }
