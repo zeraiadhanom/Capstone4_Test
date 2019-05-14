@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './SaveVideo.css'
 
 
 class SaveVideo extends Component {
@@ -6,10 +7,8 @@ class SaveVideo extends Component {
         return(
             <form onSubmit={this.handleSubmit}>
             <label>
-              Name:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
-            <input type="submit" value="Save-Video" />
+            <button type="submit" value="Save-Video"></button>
           </form>
         )
     }

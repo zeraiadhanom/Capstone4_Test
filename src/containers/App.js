@@ -6,7 +6,7 @@ import * as actions from '../actions';
 import SearchBar from '../components/searchBar';
 import VideoList from '../components/video_list';
 import VideoDetail from '../components/video_detail';
-import SavedVideo from '../components/video_list';
+import SaveVideo from '../components/SaveVideo';
 import './App.css';
 
 class App extends Component {
@@ -39,9 +39,6 @@ class App extends Component {
            <VideoDetail video={selectedVideo} />
             <VideoList videos={videos} />
          </section>  
-         <section>
-             <SaveVideo/>
-         </section> 
         </div>
     )
   }

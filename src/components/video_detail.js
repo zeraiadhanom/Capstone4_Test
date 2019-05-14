@@ -1,5 +1,6 @@
 import React from 'react';
 import './video_detail.css'
+import SaveVideo from './SaveVideo'
 
 export default function VideoDetail({ video }) {
    console.log({video})
@@ -22,7 +23,9 @@ export default function VideoDetail({ video }) {
        <iframe width="560" height="349" className="videoPlay" src={url}frameborder="0" allowfullscreen alt="videoPlay"></iframe>
        <p><strong>{title}</strong></p>
         <p>{description}</p>
-      </div>
+        <button className='saveVideo'>Save Video</button>
+     </div>
+    
     
   );
 };
