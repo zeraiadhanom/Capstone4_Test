@@ -36,4 +36,4 @@ class VideoKitem extends Component {
   }
 }
 
-export default connect(null, actions)(VideoItem)(VideoKitem);
+export default connect(null, actions)(VideoItem,VideoKitem);

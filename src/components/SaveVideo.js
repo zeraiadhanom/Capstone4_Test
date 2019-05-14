@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './SaveVideo.css'
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 
 class SaveVideo extends Component {
@@ -14,4 +16,4 @@ class SaveVideo extends Component {
     }
 }
 
-export default SaveVideo;
+export default connect(null, actions)(SaveVideo);
