@@ -24,6 +24,7 @@ export default function VideoDetail({ video }) {
        <p><strong>{title}</strong></p>
         <p>{description}</p>
         <button className='saveVideo'>Save Video</button>
+          <SaveVideo />
      </div>
     
     
