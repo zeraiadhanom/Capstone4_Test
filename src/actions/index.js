@@ -21,9 +21,7 @@ export function selectVideo(video) {
 }
 
 
-/* Kids video
-
-let baseURL = `https://www.googleapis.com/youtube/v3/search?`
+//fetch kids video
 const options = {
     part:'snippet',
     q:'children',
@@ -32,20 +30,17 @@ const options = {
     safeSearch:'restrict',
     relatedToVideoId:'kwgQ3t7X3JQ',
     maxResults:'10'
- } */
-
- const term = 'education'
- export const requestKvideos = (term) => (dispatch) => {
-       
+  } 
+ export const requestKvideos = (term, options) => (dispatch) => {
     
-    YTSearch({key: API_KEY, term}, videos => {
+    YTSearch({key: API_KEY, term, options}, videos => {
         const payload = {
             videos,
             selectVideo: videos[0]
         }
 
         dispatch({type: REQUEST_KVIDEOS, payload })
-            console.log('is this working')
+        console.log('this is')
     })
 }
 

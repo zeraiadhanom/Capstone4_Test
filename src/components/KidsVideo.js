@@ -4,15 +4,20 @@ import * as actions from '../actions';
 import {requestKvideos} from '../actions/index'
 
 class KidsVideo extends Component {
-    onInputChange(term) {
-        (this.props.requestKvideos(term));
-     }
+  
+  componentWillMount() {
+    
+    //this.props.requestKvideos('children') 
+     
+  }
    
         render() {
         
           return(
-            <button KidsVideo onClick={requestKvideos}>
-            </button>
+            <button onClick={requestKvideos}>
+              <p>Please watch kids video</p>
+
+           </button>
           )
         }
       }

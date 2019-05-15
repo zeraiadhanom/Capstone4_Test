@@ -20,7 +20,7 @@ export default function VideoDetail({ video }) {
   return (
     
     <div className="video-detail">
-       <iframe width="560" height="349" className="videoPlay" src={url}frameborder="0" allowfullscreen alt="videoPlay"></iframe>
+       <iframe width="560" height="349" className="videoPlay" src={url}frameBorder="0" allowFullScreen alt="videoPlay"></iframe>
        <p><strong>{title}</strong></p>
         <p>{description}</p>
         <button className='saveVideo'>Save Video</button>

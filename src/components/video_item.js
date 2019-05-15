@@ -7,7 +7,7 @@ class VideoItem extends Component {
   render() {
       const { video, selectVideo} = this.props;
             console.log({selectVideo})
-            console.log('this')
+            
         console.log(this.props)
       const {snippet:{title, thumbnails:{default:{url}}}} = video;
 
@@ -19,15 +19,17 @@ class VideoItem extends Component {
          </div> 
        </div>    
     )
-}
+  }
 }
 
 class VideoKitem extends Component {
   render() {
     const {video, selectKvideo} = this.props;
+        console.log({selectKvideo})
     const {snippet:{title, thumbnails:{default:{url}}}} = video;
     return(
       <div onClick={ () => selectKvideo(video)} className="video-item">
+       <img className='video-image' src={url} alt={video.snippet.description}/>
          <div className='content'>
            <div className='header'>{title}</div>
         </div>
