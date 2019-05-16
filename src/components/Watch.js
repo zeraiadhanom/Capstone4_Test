@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import SearchBar from '../components/searchBar';
 import VideoList from '../components/video_list';
-import '../components/video_list.css';
 import VideoDetail from '../components/video_detail';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import './Watch.css'
+import './Watch'
 
  
 class WATCH extends Component {
@@ -28,7 +27,7 @@ class WATCH extends Component {
         </section >
         <section className="main">
             <VideoDetail video={selectedVideo} />
-            <VideoList videos={videos} className='video-List'/>
+            <VideoList videos={videos} />
         </section>  
       </div>
     );

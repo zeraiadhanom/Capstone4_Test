@@ -10,7 +10,7 @@ import './App.css';
 
 class App extends Component {
   componentWillMount() {
-    this.props.requestVideos('Eritrea')
+    this.props.requestVideos('')
     //this.props.requestKvideos('children') 
   }
   render() {
@@ -35,7 +35,7 @@ class App extends Component {
                    {this.props.children}
                </div>
            </header>
-           <div className="content">
+           <div className="main">
                <Route exact path="/" component={Home}/>
                <Route path="/KidsVideo" component={KidsVideo}/>
                <Route path="/watch" component={WATCH}/>
