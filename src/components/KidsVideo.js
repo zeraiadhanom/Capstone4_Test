@@ -3,17 +3,17 @@ import VideoList from '../components/video_list';
 import VideoDetail from '../components/video_detail';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import './Watch.css'
+
 
  
 class KidsVideo extends Component {
   componentWillMount() {
-    //this.props.requestKvideos('Eritrea')
+ //this.props.requestKvideos('children')
   }
   render()  {
-    const {videos, selectedVideo} = this.props;
+    const {videos, selectedKvideo} = this.props;
      
-    if (!videos || !selectedVideo) {
+    if (!videos || !selectedKvideo) {
       return (
         <div>....Loading</div>
       )
@@ -22,7 +22,7 @@ class KidsVideo extends Component {
     return (
       <div>
         <section className="main">
-            <VideoDetail video={selectedVideo} />
+            <VideoDetail video={selectedKvideo} />
             <VideoList videos={videos} />
         </section>  
       </div>
@@ -34,7 +34,7 @@ function mapStateToProps(state) {
   
   return {
     videos: state.video.videos,
-    selectedVideo: state.video.selectedVideo
+    selectedVideo: state.video.selectedKvideo
   };
 }
 

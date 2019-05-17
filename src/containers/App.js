@@ -4,6 +4,7 @@ import * as actions from '../actions';
 import KidsVideo from '../components/KidsVideo';
 import Home from '../components/Home';
 import WATCH from '../components/Watch'
+import FAVIDEOS from '../components/Favorite'
 import {BrowserRouter as Router, Route, Link, HashRouter} from 'react-router-dom';
 
 import './App.css';
@@ -28,7 +29,7 @@ class App extends Component {
              <div className="menu">
                <ul className="nav">
                   <li><Link to="/">Home</Link></li>
-                  <li><Link to="/FavoriteVideos">Favorite Videos</Link> </li>  
+                  <li><Link to="/FAVIDEOS">Favorite Videos</Link> </li>  
                   <li><Link to="/KidsVideo">Kids</Link></li>
                   <li><Link to="/Watch">Watch</Link></li>
                  </ul>
@@ -39,6 +40,8 @@ class App extends Component {
                <Route exact path="/" component={Home}/>
                <Route path="/KidsVideo" component={KidsVideo}/>
                <Route path="/watch" component={WATCH}/>
+               <Route path="/FAVIDEOS" component={FAVIDEOS}/>
+               
            </div>
          </div>
        </HashRouter>
@@ -50,7 +53,8 @@ function mapStateToProps(state) {
   
   return {
     videos: state.video.videos,
-    selectedVideo: state.video.selectedVideo
+    selectedVideo: state.video.selectedVideo,
+    selectedKvideo: state.video.selectedKvideo
   };
 }
 

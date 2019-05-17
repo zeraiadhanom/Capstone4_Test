@@ -14,12 +14,12 @@ export default function(state = {}, action) {
 
     case REQUEST_KVIDEOS:
       return {
-        selectedVideo: action.payload.selectedVideo, 
+        selectedVideo: action.payload.selectedKvideo, 
         videos: action.payload.videos
       };
     case SELECT_KVIDEO:
     
-        return { ...state, selectedVideo: action.payload };
+        return { ...state, selectedKvideo: action.payload };
       }
     return state;
 }
