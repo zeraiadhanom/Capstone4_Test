@@ -13,7 +13,6 @@ class FAVIDEOS extends Component {
   render()  {
 
     const {videos, selectedVideo} = this.props;
-    
 
     return (
       <div>

@@ -14,7 +14,7 @@ export default function(state = {}, action) {
 
     case REQUEST_KVIDEOS:
       return {
-        selectedVideo: action.payload.selectedKvideo, 
+        selectedKvideo: action.payload.selectedKvideo, 
         videos: action.payload.videos
       };
     case SELECT_KVIDEO:

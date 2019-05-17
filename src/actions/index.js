@@ -36,7 +36,7 @@ const options = {
     YTSearch({key: API_KEY, term}, videos => {
         const payload = {
             videos,
-            selectVideo: videos[0]
+            selectedKvideo: videos[0]
         }
 
         dispatch({type: REQUEST_KVIDEOS, payload })

@@ -9,19 +9,8 @@ import {BrowserRouter as Router, Route, Link, HashRouter} from 'react-router-dom
 
 import './App.css';
 
-class App extends Component {
-  componentWillMount() {
-    this.props.requestVideos('')
-    //this.props.requestKvideos('children') 
-  }
+class App extends Component { 
   render() {
-    const {videos, selectedVideo} = this.props;
-     
-    if (!videos || !selectedVideo) {
-      return (
-        <div>....Loading</div>
-      )
-    } 
     return(
       <HashRouter>
        <div className="App">
@@ -46,15 +35,15 @@ class App extends Component {
          </div>
        </HashRouter>
     )
-  }
+}
 }
 
 function mapStateToProps(state) {
   
   return {
     videos: state.video.videos,
-    selectedVideo: state.video.selectedVideo,
-    selectedKvideo: state.video.selectedKvideo
+    selectedVideo: state.video.selectedVideo
+    //selectedKvideo: state.video.selectedKvideo
   };
 }
 
