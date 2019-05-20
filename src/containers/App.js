@@ -4,7 +4,7 @@ import * as actions from '../actions';
 import KidsVideo from '../components/KidsVideo';
 import Home from '../components/Home';
 import WATCH from '../components/Watch'
-import FAVIDEOS from '../components/Favorite'
+import FAVIDEOS from '../components/favorite'
 import {BrowserRouter as Router, Route, Link, HashRouter} from 'react-router-dom';
 
 import './App.css';

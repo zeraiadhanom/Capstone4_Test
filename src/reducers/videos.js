@@ -18,10 +18,17 @@ export default function(state = {}, action) {
         videos: action.payload.videos
       };
     case SELECT_KVIDEO:
+      return { ...state, selectedKvideo: action.payload };
     
-        return { ...state, selectedKvideo: action.payload };
-      }
-
+    
+      case REQUEST_FVIDEOS:
+          return {
+            selectedFvideo: action.payload.selectedFvideo, 
+            videos: action.payload.videos
+          };
+     case SELECT_FVIDEO:     
+        return { ...state, selectedFvideo: action.payload }; 
+    }
     return state;
 }
 

@@ -67,8 +67,6 @@ it needs some correct configuration:
 
 export const requestFvideos = () => (dispatch) => {
     
-    const DATABASE_URL = ''  
-
     return fetch(DATABASE_URL + 'videos')
      .then(response => response.json())
      .then(videos => {

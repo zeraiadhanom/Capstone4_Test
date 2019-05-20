@@ -1,8 +1,6 @@
 
-
-
-.searchBar input {
-  margin-top: 20px;
+.search input  {
+  margin-top: 10px;
  width: 400px;
  height: 30px;
  border: 1px solid gray;
@@ -12,13 +10,13 @@
 }
 
 .main {
- background: gray;
+ 
  margin-top: 20px;
  padding-left: 20px;
  padding-right: 20px;
  align-content: center;
  padding-right: 10px;
- background-color: green;
+
 }
 
 

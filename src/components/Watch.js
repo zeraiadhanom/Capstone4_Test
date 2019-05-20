@@ -4,9 +4,8 @@ import VideoList from '../components/video_list';
 import VideoDetail from '../components/video_detail';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import './Watch'
+import './Watch.css'
 
- 
 class WATCH extends Component {
   componentWillMount() {
   this.props.requestVideos('')
