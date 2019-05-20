@@ -1,4 +1,4 @@
-import { REQUEST_VIDEOS, SELECT_VIDEO,REQUEST_KVIDEOS, SELECT_KVIDEO } from '../actions/actionType';
+import { REQUEST_VIDEOS, SELECT_VIDEO,REQUEST_KVIDEOS, SELECT_KVIDEO, REQUEST_FVIDEOS, SELECT_FVIDEO } from '../actions/actionType';
 
 
 export default function(state = {}, action) {
@@ -21,6 +21,7 @@ export default function(state = {}, action) {
     
         return { ...state, selectedKvideo: action.payload };
       }
+
     return state;
 }
 

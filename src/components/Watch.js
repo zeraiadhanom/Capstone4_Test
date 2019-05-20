@@ -9,7 +9,7 @@ import './Watch'
  
 class WATCH extends Component {
   componentWillMount() {
-  this.props.requestVideos('Eritrea')
+  this.props.requestVideos('')
   }
   render()  {
     const {videos, selectedVideo} = this.props;

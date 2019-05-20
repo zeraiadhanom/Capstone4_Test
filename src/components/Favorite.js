@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import VideoList from '../components/video_list';
-import VideoDetail from '../components/video_detail';
+import VideoList from './video_list';
+import VideoDetail from './video_detail';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -8,17 +8,17 @@ import * as actions from '../actions';
  
 class FAVIDEOS extends Component {
   componentWillMount() {
- //this.props.requestKvideos('children')
+    this.props.requestFvideos()
   }
   render()  {
 
-    const {videos, selectedVideo} = this.props;
+    const {videos, selectedFvideo} = this.props;
 
     return (
       <div>
         <section className="main">
             <p>THis is for fav videos</p>
-            <VideoDetail video={selectedVideo} />
+            <VideoDetail video={selectedFvideo} />
             <VideoList videos={videos} />
 
         </section>  
@@ -31,7 +31,7 @@ function mapStateToProps(state) {
   
   return {
     videos: state.video.videos,
-    selectedVideo: state.video.selectedKvideo
+    selectedFvideo: state.video.selectedFvideo
   };
 }
 
