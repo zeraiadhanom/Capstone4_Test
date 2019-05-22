@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import './Login.css';
 
 class Login extends Component {
     constructor() {
         super();
         this.state = {
-            email: '',
+            username: '',
             password: '',
             errors: {}
         }
@@ -20,22 +21,39 @@ class Login extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = {
-            email: this.state.email,
-            password: this.state.password
+        fetch('/api/auth/login', {
+            method: 'POST',
+            body: JSON.stringify(this.state),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+          .then(res => {
+            if (res.status === 200) {
+              this.props.history.push('/');
+              console.log(this)
+            } else {
+              const error = new Error(res.error);
+              throw error;
+            }
+          })
+          .catch(err => {
+            console.error(err);
+            alert('Error logging in please try again');
+          });
         }
-        console.log(user);
-    }
 
     render() {
+       // const {Username, Password, errors} = this.state; 
         return(
-            <div className="container" style={{marginTop:'50px',width:'700px'}}>
-                <h2 style={{marginBottom:'40px'}}>Login</h2>
+            <div className="container" >
+                <h2 className="login">Login</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div className='form-group'>
-                        <input type="email" placeholder="Email"
+                        <input type="username" placeholder="Username"
                         onChange={this.handleInputChange}
-                        value={this.state.email}/>
+                        value={this.state.Username}
+                        />
                     </div>
                     <div className="form-group">
                         <input type="password"
@@ -43,7 +61,7 @@ class Login extends Component {
                         className="form-control"
                         name="password"
                         onChange={this.handleInputchange}
-                        value={this.state.password} />
+                        value={this.state.Password} />
                     </div>
                     <div className="from-group">
                         <button type="submit" className="btn btn-primary">
