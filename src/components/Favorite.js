@@ -13,7 +13,12 @@ class FAVIDEOS extends Component {
   render()  {
 
     const {videos, selectedFvideo} = this.props;
-
+    if (!videos || !selectedFvideo) {
+      return (
+        <div>....Loading</div>
+      )
+    } 
+    
     return (
       <div>
         <section className="main">
