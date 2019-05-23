@@ -5,6 +5,8 @@ import VideoDetail from '../components/video_detail';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import './Watch.css'
+import SaveVideo from '../components/SaveVideo';
+
 
 class WATCH extends Component {
   componentWillMount() {
@@ -27,7 +29,12 @@ class WATCH extends Component {
         <section className="main">
             <VideoDetail video={selectedVideo} />
             <VideoList videos={videos} />
-        </section>  
+        </section> 
+        <section>
+        <button className='saveVideo'> Save
+             < SaveVideo />
+        </button>
+        </section> 
       </div>
     );
   }

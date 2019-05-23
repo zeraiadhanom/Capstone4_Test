@@ -29,8 +29,7 @@ class App extends Component {
                <Route exact path="/" component={Home}/>
                <Route path="/KidsVideo" component={KidsVideo}/>
                <Route path="/watch" component={WATCH}/>
-               <Route path="/FAVIDEOS" component={FAVIDEOS}/>
-               
+               <Route path="/FAVIDEOS" component={FAVIDEOS}/> 
            </div>
          </div>
        </HashRouter>
@@ -40,11 +39,6 @@ class App extends Component {
 
 function mapStateToProps(state) {
   
-  return {
-    videos: state.video.videos,
-    selectedVideo: state.video.selectedVideo
-    //selectedKvideo: state.video.selectedKvideo
-  };
 }
 
 

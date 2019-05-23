@@ -5,7 +5,7 @@ const Post = ({body}) => {
  return(
      <div>
          {body.map(post => {
-             const {vidoId, title, content} = post;
+             const {vidoId, title, description} = post;
              return(
                  <div key={_id}>
                  <h2>{title}</h2>

@@ -25,8 +25,7 @@ class FAVIDEOS extends Component {
             <p>THis is for fav videos</p>
             <VideoDetail video={selectedFvideo} />
             <VideoList videos={videos} />
-
-        </section>  
+        </section>     
       </div>
     );
   }

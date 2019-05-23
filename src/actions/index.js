@@ -5,11 +5,12 @@ import {REQUEST_VIDEOS,
        REQUEST_KVIDEOS, 
        SELECT_KVIDEO, 
        REQUEST_FVIDEOS,
-       SELECT_FVIDEO  } from './actionType'
+       SELECT_FVIDEO, 
+       ADD_FVIDO } from './actionType'
 
 
 const API_KEY = 'AIzaSyBYhtoV6rW9kAGuxUPuFaYlK6JVRppseY4'
-const DATABASE_URL = "mongodb://video_saved:videoSaved2019@ds141088.mlab.com:41088/videos";
+const DATABASE_URL = "http://localhost/api/auth";
 
 export const requestVideos = (term) => (dispatch) => {
     YTSearch({key: API_KEY, term}, videos => {
@@ -81,4 +82,5 @@ export const requestFvideos = () => (dispatch) => {
 export function selectFvideo(video) {
         return { type: SELECT_FVIDEO, payload: video}
  }
-    
+
+

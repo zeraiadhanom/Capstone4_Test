@@ -21,7 +21,7 @@ class Login extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        fetch('/api/auth/login', {
+        fetch(`/api/auth/login`, {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {

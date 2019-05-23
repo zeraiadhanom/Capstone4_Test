@@ -1,15 +1,14 @@
 import React from 'react';
 import './video_detail.css'
-import SaveVideo from './SaveVideo'
 
 export default function VideoDetail({ video }) {
-   console.log({video})
+  // console.log({video})
 
   if(!video) {
     return (
       <div>...Loading</div>
     );
-  }
+  } 
 
   const {
     snippet: { title, description }, id: { videoId }
@@ -23,8 +22,6 @@ export default function VideoDetail({ video }) {
        <iframe width="560" height="349" className="videoPlay" src={url}frameBorder="0" allowFullScreen alt="videoPlay"></iframe>
        <p><strong>{title}</strong></p>
         <p>{description}</p>
-        <button className='saveVideo'>Save Video</button>
-          <SaveVideo />
      </div>
     
     

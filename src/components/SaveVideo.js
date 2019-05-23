@@ -1,19 +1,36 @@
-import React, {Component} from 'react';
-import './SaveVideo.css'
+import React, { Component } from "react";
+import VideoDetail from './video_detail';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 
+ 
 class SaveVideo extends Component {
-    render() {
-        return(
-            <form onSubmit={this.handleSubmit}>
-            <label>
-            </label>
-            <button type="submit" value="Save-Video"></button>
-          </form>
-        )
-    }
+  componentWillMount() {
+    this.props.requestFvideos()
+  }
+  render()  {
+    const {videos, selectedFvideo} = this.props;
+    return (
+      <div>
+        <section className="main">
+           
+            <VideoDetail video={selectedFvideo} />
+           
+        </section>  
+      </div>
+    );
+  }
+}
+ 
+function mapStateToProps(state) {
+  
+  return {
+    videos: state.video.videos,
+    selectedFvideo: state.video.selectedFvideo
+  };
 }
 
-export default connect(null, actions)(SaveVideo);
+
+
+export default connect(mapStateToProps, actions)(SaveVideo);
