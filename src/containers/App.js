@@ -6,10 +6,40 @@ import Home from '../components/Home';
 import WATCH from '../components/Watch'
 import FAVIDEOS from '../components/favorite'
 import {BrowserRouter as Router, Route, Link, HashRouter} from 'react-router-dom';
+import {refreshAuthToken} from '../actions/auth';
 
 import './App.css';
 
 class App extends Component { 
+  componentDidUpdate(prevProps) {
+    if (!prevProps.loggedIn && this.props.loggedIn) {
+        // When we are logged in, refresh the auth token periodically
+        this.startPeriodicRefresh();
+    } else if (prevProps.loggedIn && !this.props.loggedIn) {
+        // Stop refreshing when we log out
+        this.stopPeriodicRefresh();
+    }
+}
+
+componentWillUnmount() {
+    this.stopPeriodicRefresh();
+}
+
+startPeriodicRefresh() {
+    this.refreshInterval = setInterval(
+        () => this.props.dispatch(refreshAuthToken()),
+        60 * 60 * 1000 // One hour
+    );
+}
+
+stopPeriodicRefresh() {
+    if (!this.refreshInterval) {
+        return;
+    }
+
+    clearInterval(this.refreshInterval);
+}
+
   render() {
     return(
       <HashRouter>

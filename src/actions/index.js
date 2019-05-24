@@ -10,7 +10,6 @@ import {REQUEST_VIDEOS,
 
 
 const API_KEY = 'AIzaSyBYhtoV6rW9kAGuxUPuFaYlK6JVRppseY4'
-const DATABASE_URL = "http://localhost/api/auth";
 
 export const requestVideos = (term) => (dispatch) => {
     YTSearch({key: API_KEY, term}, videos => {
@@ -66,9 +65,9 @@ it needs some correct configuration:
 ============================================================
 */
 
-export const requestFvideos = () => (dispatch) => {
+ export const requestFvideos = () => (dispatch) => {
     
-    return fetch('http://localhost:5000/videos')
+    return fetch('http://localhost:80/videos')
      .then(response => response.json())
      .then(videos => {
          const payload = {
@@ -81,6 +80,6 @@ export const requestFvideos = () => (dispatch) => {
 
 export function selectFvideo(video) {
         return { type: SELECT_FVIDEO, payload: video}
- }
+ } 
 
 

@@ -7,12 +7,11 @@ export default class Home extends React.Component {
         return (
             <div className="home-page">
                 <h2>Welcome to The Video Search App</h2>
-
+                
                 <div className="login">
                     < Login />
                 </div>
             </div>
-
         );
     }
 }

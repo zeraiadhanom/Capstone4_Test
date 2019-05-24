@@ -10,7 +10,7 @@ class SaveVideo extends Component {
     this.props.requestFvideos()
   }
   render()  {
-    const {videos, selectedFvideo} = this.props;
+    const {selectedFvideo} = this.props;
     return (
       <div>
         <section className="main">
