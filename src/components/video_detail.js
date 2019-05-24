@@ -2,7 +2,7 @@ import React from 'react';
 import './video_detail.css'
 
 export default function VideoDetail({ video }) {
-  // console.log({video})
+  
 
   if(!video) {
     return (
@@ -13,7 +13,7 @@ export default function VideoDetail({ video }) {
   const {
     snippet: { title, description }, id: { videoId }
   } = video;
-
+    
   const url = `https://youtube.com/embed/${videoId}`;
 
   return (

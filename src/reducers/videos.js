@@ -22,10 +22,12 @@ export default function(state = {}, action) {
     
     
       case REQUEST_FVIDEOS:
+         
           return {
             selectedFvideo: action.payload.selectedFvideo, 
             videos: action.payload.videos
           };
+        
      case SELECT_FVIDEO:     
         return { ...state, selectedFvideo: action.payload }; 
     }

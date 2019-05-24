@@ -5,11 +5,9 @@ import  {connect} from 'react-redux';
 
 class VideoItem extends Component {
   render() {
-      const { video, selectVideo} = this.props;
-            console.log({selectVideo})
-            
-        console.log(this.props)
+      const { video, selectVideo} = this.props;  
       const {snippet:{title, thumbnails:{default:{url}}}} = video;
+      
 
     return (
        <div onClick={ () => selectVideo(video)} className="video-item" >
@@ -25,7 +23,7 @@ class VideoItem extends Component {
 class VideoKitem extends Component {
   render() {
     const {video, selectKvideo} = this.props;
-        console.log({selectKvideo})
+        
     const {snippet:{title, thumbnails:{default:{url}}}} = video;
     return(
       <div onClick={ () => selectKvideo(video)} className="video-item">
@@ -41,8 +39,8 @@ class VideoKitem extends Component {
 class VideoFitem extends Component {
   render() {
     const {video, selectFvideo} = this.props;
-        console.log({selectFvideo})
     const {snippet:{title, thumbnails:{default:{url}}}} = video;
+    
     return(
       <div onClick={ () => selectFvideo(video)} className="video-item">
        <img className='video-image' src={url} alt={video.snippet.description}/>

@@ -67,9 +67,16 @@ it needs some correct configuration:
 
  export const requestFvideos = () => (dispatch) => {
     
-    return fetch('http://localhost:80/videos')
+    return fetch('http://localhost:8080/videos',
+      { method: 'get',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('authToken')
+        }
+    })
      .then(response => response.json())
      .then(videos => {
+         console.log(videos)
          const payload = {
              videos,
              selectedFvideo: videos[0]
@@ -79,6 +86,30 @@ it needs some correct configuration:
     }
 
 export function selectFvideo(video) {
+        return { type: SELECT_FVIDEO, payload: video}
+ } 
+
+ export const saveFvideos = () => (dispatch) => {
+    
+    return fetch('http://localhost:8080/videos/create',
+      { method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('authToken')
+        }
+    })
+     .then(response => response.json())
+     .then(videos => {
+         console.log(videos)
+         const payload = {
+             videos,
+             selectedFvideo: videos[0]
+         }
+         dispatch({type: REQUEST_FVIDEOS, payload})
+     })
+    }
+
+export function saveFvideo(video) {
         return { type: SELECT_FVIDEO, payload: video}
  } 
 
