@@ -31,8 +31,8 @@ class WATCH extends Component {
             <VideoList videos={videos} />
         </section> 
         <section>
-        <button className='saveVideo'> Save
-             < SaveVideo />
+        <button className='saveVideo'>
+          < SaveVideo />
         </button>
         </section> 
       </div>

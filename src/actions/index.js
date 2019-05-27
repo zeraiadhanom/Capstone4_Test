@@ -6,25 +6,30 @@ import {REQUEST_VIDEOS,
        SELECT_KVIDEO, 
        REQUEST_FVIDEOS,
        SELECT_FVIDEO, 
-       ADD_FVIDO } from './actionType'
+       ADD_SVIDEO,
+       SELECT_SVIDEO } from './actionType'
 
 
 const API_KEY = 'AIzaSyBYhtoV6rW9kAGuxUPuFaYlK6JVRppseY4'
 
 export const requestVideos = (term) => (dispatch) => {
+    
     YTSearch({key: API_KEY, term}, videos => {
+        //console.log(videos)
         const payload = {
             videos,
             selectedVideo: videos[0]
         }
         dispatch({type: REQUEST_VIDEOS, payload})
+         
     })
 }
-
+ 
 export function selectVideo(video) {
+     
+    
     return { type: SELECT_VIDEO, payload: video}
 }
-
 
 /*
 =========================================================================
@@ -45,17 +50,21 @@ const options = {
  export const requestKvideos = (term) => (dispatch) => {
     
     YTSearch({key: API_KEY, term}, videos => {
+         
+    
         const payload = {
             videos,
             selectedKvideo: videos[0]
         }
 
         dispatch({type: REQUEST_KVIDEOS, payload })
+       
     })
 }
 
 export function selectKvideo(video) {
     return { type: SELECT_KVIDEO, payload: video}
+  
 }
 
 
@@ -65,9 +74,9 @@ it needs some correct configuration:
 ============================================================
 */
 
- export const requestFvideos = () => (dispatch) => {
-    
-    return fetch('http://localhost:8080/videos',
+export const requestFvideos = () => (dispatch) => {
+
+    return fetch('/videos',
       { method: 'get',
         headers: {
             'Content-Type': 'application/json',
@@ -89,28 +98,46 @@ export function selectFvideo(video) {
         return { type: SELECT_FVIDEO, payload: video}
  } 
 
- export const saveFvideos = () => (dispatch) => {
+ 
+ export const addSvideos = (term) => (dispatch) => {
     
-    return fetch('http://localhost:8080/videos/create',
-      { method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('authToken')
+    YTSearch({key: API_KEY, term}, videos => {
+    
+        const payload = {
+            videos,
+            selectedSVideo: videos[0]
         }
-    })
-     .then(response => response.json())
-     .then(videos => {
-         console.log(videos)
-         const payload = {
-             videos,
-             selectedFvideo: videos[0]
-         }
-         dispatch({type: REQUEST_FVIDEOS, payload})
-     })
+        dispatch({type: ADD_SVIDEO, payload})
+        
+       // let data = (videos[0])
+    
+             const  data = ( {
+               "title": payload.videos[0].snippet.title,
+                "description":payload.videos[0].snippet.description,
+                "videoId":payload.videos[0].id.videoId
+              } )
+            //  console.log(data)
+           
+        let settings = {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+           "Authorization" : 'Bearer ' + localStorage.getItem('authToken'),
+           "Content-Type": "application/json" 
+           } 
+          };
+
+          fetch('/videos/create', settings)
+              .then(response => {
+               if (response.ok){
+                  return response.json();
+                  console.log(response.json())
+               }
+		        else{
+                 throw new Error('something went wrong');
+               }
+             })
+        })
     }
 
-export function saveFvideo(video) {
-        return { type: SELECT_FVIDEO, payload: video}
- } 
-
-
+    

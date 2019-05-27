@@ -2,20 +2,21 @@ import React from 'react';
 import './video_detail.css'
 
 export default function VideoDetail({ video }) {
-  
 
   if(!video) {
     return (
       <div>...Loading</div>
     );
   } 
-
+   
+    //  const {snippet:{title, thumbnails:{default:{url}}}} = video;
   const {
     snippet: { title, description }, id: { videoId }
-  } = video;
+  } = video;  
+       
     
   const url = `https://youtube.com/embed/${videoId}`;
-
+           
   return (
     
     <div className="video-detail">

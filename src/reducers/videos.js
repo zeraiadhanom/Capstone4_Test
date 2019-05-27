@@ -1,4 +1,4 @@
-import { REQUEST_VIDEOS, SELECT_VIDEO,REQUEST_KVIDEOS, SELECT_KVIDEO, REQUEST_FVIDEOS, SELECT_FVIDEO } from '../actions/actionType';
+import { REQUEST_VIDEOS, SELECT_VIDEO,REQUEST_KVIDEOS, SELECT_KVIDEO, REQUEST_FVIDEOS, SELECT_FVIDEO, ADD_SVIDEO,SELECT_SVIDEO } from '../actions/actionType';
 
 
 export default function(state = {}, action) {
@@ -30,6 +30,17 @@ export default function(state = {}, action) {
         
      case SELECT_FVIDEO:     
         return { ...state, selectedFvideo: action.payload }; 
+
+      
+        case ADD_SVIDEO:
+         
+          return {
+            selectedSVideo: action.payload.selectedSVideo, 
+            videos: action.payload.videos
+          };
+        
+     case SELECT_SVIDEO:     
+        return { ...state, selectedSVideo: action.payload }; 
     }
     return state;
 }

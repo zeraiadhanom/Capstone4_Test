@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import VideoDetail from './video_detail';
+
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -7,15 +7,18 @@ import * as actions from '../actions';
  
 class SaveVideo extends Component {
   componentWillMount() {
-    this.props.requestFvideos()
+   this.props.addSvideos()
+  // this.props.requestVideos('')
+  
   }
   render()  {
-    const {selectedFvideo} = this.props;
+    const {selectedVideo} = this.props;
     return (
       <div>
         <section className="main">
            
-            <VideoDetail video={selectedFvideo} />
+           
+            <button onClick={SaveVideo}>Save</button>
            
         </section>  
       </div>
@@ -26,8 +29,8 @@ class SaveVideo extends Component {
 function mapStateToProps(state) {
   
   return {
-    videos: state.video.videos,
-    selectedFvideo: state.video.selectedFvideo
+   // videos: state.video.videos,
+    selectedVideo: state.video.selectedVideo
   };
 }
 
