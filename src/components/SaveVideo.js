@@ -2,12 +2,13 @@ import React, { Component } from "react";
 
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import './SaveVideo.css' ;
 
 
  
 class SaveVideo extends Component {
   componentWillMount() {
-   this.props.addSvideos()
+    this.props.addSvideos()
   // this.props.requestVideos('')
   
   }
@@ -15,11 +16,10 @@ class SaveVideo extends Component {
     const {selectedVideo} = this.props;
     return (
       <div>
-        <section className="main">
+        <section className="save">
            
            
-            <button onClick={SaveVideo}>Save</button>
-           
+            <button onClick={() => this.SaveVideo()}>Save</button>
         </section>  
       </div>
     );

@@ -76,23 +76,24 @@ it needs some correct configuration:
 
 export const requestFvideos = () => (dispatch) => {
 
-    return fetch('/videos',
-      { method: 'get',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.getItem('authToken')
-        }
-    })
-     .then(response => response.json())
-     .then(videos => {
-         console.log(videos)
-         const payload = {
-             videos,
-             selectedFvideo: videos[0]
-         }
-         dispatch({type: REQUEST_FVIDEOS, payload})
-     })
-    }
+         fetch('http://localhost:8080/videos', {
+         method: 'get',
+         headers: {
+              "Authorization" : 'Bearer ' + localStorage.getItem('authToken'),
+              "Content-Type": 'application/json'
+             }
+            })
+            .then(response => response.json())
+                
+            .then(videos => {
+    
+             const payload = {
+                 videos,
+                 selectedFvideo: videos[0]
+             }
+             dispatch({type: REQUEST_FVIDEOS, payload})
+})
+}
 
 export function selectFvideo(video) {
         return { type: SELECT_FVIDEO, payload: video}
@@ -111,11 +112,11 @@ export function selectFvideo(video) {
         
        // let data = (videos[0])
     
-             const  data = ( {
-               "title": payload.videos[0].snippet.title,
-                "description":payload.videos[0].snippet.description,
-                "videoId":payload.videos[0].id.videoId
-              } )
+             const  data = ( 
+               {"title": videos[0].snippet.title,
+                "description":videos[0].snippet.description,
+                "videoId":videos[0].id.videoId
+                } )
             //  console.log(data)
            
         let settings = {
@@ -126,15 +127,16 @@ export function selectFvideo(video) {
            "Content-Type": "application/json" 
            } 
           };
-
-          fetch('/videos/create', settings)
+           
+          fetch('http://localhost:8080/videos/create', settings)
               .then(response => {
                if (response.ok){
-                  return response.json();
-                  console.log(response.json())
+                   console.log(response.ok)
+               //   return response.json();
+                  console.log('zerai')
                }
 		        else{
-                 throw new Error('something went wrong');
+                // throw new Error('something went wrong');
                }
              })
         })

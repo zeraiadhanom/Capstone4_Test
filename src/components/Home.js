@@ -22,7 +22,7 @@ export default class Home extends React.Component {
                   <li><Link to="/FAVIDEOS">Favorite Videos</Link> </li>  
                   <li><Link to="/KidsVideo">Kids</Link></li>
                   <li><Link to="/Watch">Watch</Link></li>
-                  <li><Link to="/HeaderBar">Log Out</Link></li>
+                 
                   
                  </ul>
                    {this.props.children}
@@ -32,7 +32,7 @@ export default class Home extends React.Component {
                <Route path="/KidsVideo" component={KidsVideo}/>
                <Route path="/watch" component={WATCH}/>
                <Route path="/FAVIDEOS" component={FAVIDEOS}/>
-               <Route path="/" component={HeaderBar}/> 
+               
            </div>
          </div>
        </HashRouter>

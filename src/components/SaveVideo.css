@@ -1,5 +1,10 @@
+
 .saveVideo {
 
-    border: 1px solid gray;
-    
-}
+    margin-top: 90px;
+    background: black;
+    width: 200px;
+    border: 1px solid black;
+
+    border-radius: 20px;
+  }
