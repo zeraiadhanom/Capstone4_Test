@@ -46,7 +46,8 @@ const options = {
     relatedToVideoId:'kwgQ3t7X3JQ',
     maxResults:'10'
     =========================================================================
-} */
+} 
+*/
  export const requestKvideos = (term) => (dispatch) => {
     
     YTSearch({key: API_KEY, term}, videos => {
@@ -72,8 +73,8 @@ export function selectKvideo(video) {
 The below is a setup to communcate with server and fetch videos
 it needs some correct configuration:
 ============================================================
-*/
 
+*/
 export const requestFvideos = () => (dispatch) => {
 
          fetch('http://localhost:8080/videos', {
@@ -113,11 +114,19 @@ export function selectFvideo(video) {
        // let data = (videos[0])
     
              const  data = ( 
-               {"title": videos[0].snippet.title,
-                "description":videos[0].snippet.description,
-                "videoId":videos[0].id.videoId
-                } )
-            //  console.log(data)
+                 {snippet: 
+                    {
+                        "title": videos[0].snippet.title,
+                        "description":videos[0].snippet.description,
+                        "thumbnails": videos[0].snippet.thumbnails.default.url
+                    },
+                    id: {
+                        "videoId" : videos[0].id.videoId
+                    }
+                }
+             )
+               
+             console.log('zerai',data)
            
         let settings = {
             method: "POST",
@@ -131,9 +140,9 @@ export function selectFvideo(video) {
           fetch('http://localhost:8080/videos/create', settings)
               .then(response => {
                if (response.ok){
-                   console.log(response.ok)
-               //   return response.json();
-                  console.log('zerai')
+                   return response.json();
+                 //  console.log(response.json()) //unreachable code??
+
                }
 		        else{
                 // throw new Error('something went wrong');

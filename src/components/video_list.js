@@ -1,5 +1,5 @@
 import React from 'react'
-import './video_list.css'
+import './style/video_list.css'
 import VideoItem  from './video_item'
 import VideoKitem from './video_item'
 import VideoFitem from './video_item'

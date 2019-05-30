@@ -6,7 +6,7 @@ import * as actions from '../actions';
 
 class KidsVideo extends Component {
   componentWillMount() {
-  this.props.requestKvideos('children')
+  this.props.requestKvideos('kids')
 
   }
   render()  {

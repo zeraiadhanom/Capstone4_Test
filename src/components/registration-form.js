@@ -1,5 +1,5 @@
 import React from 'react';
-//import './RegistrationForm.css'
+import './style/RegistrationForm.css'
 //import './Login.css'
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';

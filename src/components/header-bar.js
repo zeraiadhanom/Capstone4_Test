@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {Link, Redirect} from 'react-router-dom';
-import './header.css'
+import './style/header.css'
 
 
 export class HeaderBar extends React.Component {

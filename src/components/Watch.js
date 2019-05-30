@@ -4,7 +4,7 @@ import VideoList from '../components/video_list';
 import VideoDetail from '../components/video_detail';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import './Watch.css'
+import './style/Watch.css'
 import SaveVideo from '../components/SaveVideo';
 
 

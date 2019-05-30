@@ -1,5 +1,5 @@
 import React from 'react';
-import './video_detail.css'
+import './style/video_detail.css'
 
 export default function VideoDetail({ video }) {
 
@@ -28,4 +28,3 @@ export default function VideoDetail({ video }) {
     
   );
 };
-

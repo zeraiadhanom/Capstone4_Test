@@ -1,13 +1,10 @@
 import React from 'react';
-import './Home.css';
-//import React, {Component} from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
+import './style/Home.css';
 import KidsVideo from '../components/KidsVideo';
 import WATCH from '../components/Watch'
 import FAVIDEOS from '../components/favorite'
 import {BrowserRouter as Router, Route, Link, HashRouter} from 'react-router-dom';
-import HeaderBar from '../components/header-bar'
+
 
 export default class Home extends React.Component {
    
