@@ -8,7 +8,7 @@ import './style/SaveVideo.css' ;
  
 class SaveVideo extends Component {
   componentWillMount() {
-    this.props.addSvideos()
+  //  this.props.addSvideos()
   // this.props.requestVideos('')
   
   }

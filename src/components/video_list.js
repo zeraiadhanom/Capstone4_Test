@@ -10,7 +10,7 @@ export default function VideoList({videos}) {
     const videosList = videos.map(video =>
         <VideoItem key={video.etag} video={video} />
       );
-    
+      console.log('VideoItem')
       return (
         <section className="video-List">
           {videosList}
@@ -22,6 +22,7 @@ export default function VideoList({videos}) {
       const videosKlist = videos.map(video => 
         <VideoKitem key={video.etag} video={video} />
       )
+      console.log('VideoKitem')
       return (
         <section className="video-List" >
              {videosKlist}

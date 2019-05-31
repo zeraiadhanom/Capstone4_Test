@@ -15,7 +15,7 @@ const API_KEY = 'AIzaSyBYhtoV6rW9kAGuxUPuFaYlK6JVRppseY4'
 export const requestVideos = (term) => (dispatch) => {
     
     YTSearch({key: API_KEY, term}, videos => {
-        //console.log(videos)
+        console.log('videos',videos)
         const payload = {
             videos,
             selectedVideo: videos[0]
@@ -26,7 +26,7 @@ export const requestVideos = (term) => (dispatch) => {
 }
  
 export function selectVideo(video) {
-     
+    
     
     return { type: SELECT_VIDEO, payload: video}
 }
@@ -74,7 +74,7 @@ The below is a setup to communcate with server and fetch videos
 it needs some correct configuration:
 ============================================================
 
-*/
+/*
 export const requestFvideos = () => (dispatch) => {
 
          fetch('http://localhost:8080/videos', {
@@ -151,4 +151,4 @@ export function selectFvideo(video) {
         })
     }
 
-    
+    */

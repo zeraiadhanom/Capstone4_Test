@@ -18,7 +18,7 @@ class VideoItem extends Component {
        </div>    
     )
   }
-} 
+}
 
 class VideoKitem extends Component {
   
@@ -54,4 +54,4 @@ class VideoFitem extends Component {
   }
 } 
 
-export default connect(null, actions)(VideoItem, VideoKitem,VideoFitem);
+export default connect(null, actions)(VideoKitem, VideoItem, VideoFitem);
