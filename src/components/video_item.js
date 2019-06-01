@@ -20,7 +20,7 @@ class VideoItem extends Component {
   }
 }
 
-class VideoKitem extends Component {
+/*class VideoKitem extends Component {
   
   render() {
     const {video, selectKvideo} = this.props;
@@ -35,7 +35,7 @@ class VideoKitem extends Component {
       </div>
     )
   }
-}
+}*/
 
 
 class VideoFitem extends Component {
@@ -54,4 +54,4 @@ class VideoFitem extends Component {
   }
 } 
 
-export default connect(null, actions)(VideoKitem, VideoItem, VideoFitem);
+export default connect(null, actions)(VideoItem);

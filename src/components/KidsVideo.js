@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import VideoList from '../components/video_list';
+import VideoKlist from '../components/video_Klist';
 import VideoDetail from '../components/video_detail';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -11,7 +11,6 @@ class KidsVideo extends Component {
   }
   render()  {
     const {videos, selectedKvideo} = this.props;
-     
     if (!videos || !selectedKvideo) {
       return (
         <div>....Loading</div>
@@ -22,7 +21,7 @@ class KidsVideo extends Component {
       <div>
         <section className="main">
             <VideoDetail video={selectedKvideo} />
-            <VideoList videos={videos} />
+            <VideoKlist videos={videos} />
         </section>  
       </div>
     );

@@ -26,8 +26,7 @@ export const requestVideos = (term) => (dispatch) => {
 }
  
 export function selectVideo(video) {
-    
-    
+    console.log('zerai',video)
     return { type: SELECT_VIDEO, payload: video}
 }
 
@@ -64,7 +63,9 @@ const options = {
 }
 
 export function selectKvideo(video) {
+  
     return { type: SELECT_KVIDEO, payload: video}
+      
   
 }
 

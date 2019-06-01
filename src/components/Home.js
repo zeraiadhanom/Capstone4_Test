@@ -15,12 +15,10 @@ export default class Home extends React.Component {
          <header className="App-header">
              <div className="menu">
                <ul className="nav">
-                  <li><Link to="/Home">Home</Link></li>
-                  <li><Link to="/FAVIDEOS">Favorite Videos</Link> </li>  
+                  <li><Link to="/Home">Home</Link></li> 
                   <li><Link to="/KidsVideo">Kids</Link></li>
                   <li><Link to="/Watch">Watch</Link></li>
-                 
-                  
+                  <li><Link to="/FAVIDEOS">Favorite Videos</Link> </li>   
                  </ul>
                    {this.props.children}
                </div>
