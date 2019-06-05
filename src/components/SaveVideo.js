@@ -8,12 +8,11 @@ import './style/SaveVideo.css' ;
  
 class SaveVideo extends Component {
   componentWillMount() {
-  //  this.props.addSvideos()
-  // this.props.requestVideos('')
+  // this.props.addSvideos()
   
   }
   render()  {
-    const {selectedVideo} = this.props;
+    //const {selectedVideo} = this.props;
     return (
       <div>
         <section className="save">

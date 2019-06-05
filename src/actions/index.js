@@ -7,7 +7,7 @@ import {REQUEST_VIDEOS,
        REQUEST_FVIDEOS,
        SELECT_FVIDEO, 
        ADD_SVIDEO,
-       SELECT_SVIDEO } from './actionType'
+       } from './actionType'
 
 
 const API_KEY = 'AIzaSyBYhtoV6rW9kAGuxUPuFaYlK6JVRppseY4'
@@ -19,14 +19,15 @@ export const requestVideos = (term) => (dispatch) => {
         const payload = {
             videos,
             selectedVideo: videos[0]
+           
         }
         dispatch({type: REQUEST_VIDEOS, payload})
-         
+        console.log('addha',videos[0])
     })
 }
  
 export function selectVideo(video) {
-    console.log('zerai',video)
+
     return { type: SELECT_VIDEO, payload: video}
 }
 
@@ -50,15 +51,12 @@ const options = {
  export const requestKvideos = (term) => (dispatch) => {
     
     YTSearch({key: API_KEY, term}, videos => {
-         
-    
         const payload = {
             videos,
-            selectedKvideo: videos[0]
+            selectedKvideo: videos[0]     
         }
-
-        dispatch({type: REQUEST_KVIDEOS, payload })
-       
+         console.log(videos[0])
+        dispatch({type: REQUEST_KVIDEOS, payload })       
     })
 }
 
@@ -75,8 +73,9 @@ The below is a setup to communcate with server and fetch videos
 it needs some correct configuration:
 ============================================================
 
-/*
+*/
 export const requestFvideos = () => (dispatch) => {
+         
 
          fetch('http://localhost:8080/videos', {
          method: 'get',
@@ -86,14 +85,16 @@ export const requestFvideos = () => (dispatch) => {
              }
             })
             .then(response => response.json())
+               
                 
             .then(videos => {
-    
+                console.log(videos)
              const payload = {
                  videos,
                  selectedFvideo: videos[0]
              }
              dispatch({type: REQUEST_FVIDEOS, payload})
+
 })
 }
 
@@ -101,7 +102,7 @@ export function selectFvideo(video) {
         return { type: SELECT_FVIDEO, payload: video}
  } 
 
- 
+ /*
  export const addSvideos = (term) => (dispatch) => {
     
     YTSearch({key: API_KEY, term}, videos => {
@@ -127,7 +128,7 @@ export function selectFvideo(video) {
                 }
              )
                
-             console.log('zerai',data)
+            // console.log('zerai',data)
            
         let settings = {
             method: "POST",
@@ -151,5 +152,4 @@ export function selectFvideo(video) {
              })
         })
     }
-
-    */
+*/

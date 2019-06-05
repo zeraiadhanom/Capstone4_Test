@@ -30,6 +30,9 @@ class WATCH extends Component {
             <VideoDetail video={selectedVideo} />
             <VideoList videos={videos} />
         </section> 
+        <section className="saveVideo">
+             <SaveVideo />
+        </section>
       </div>
     );
   }

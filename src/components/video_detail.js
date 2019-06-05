@@ -9,8 +9,8 @@ export default function VideoDetail({ video }) {
     );
   } 
    
-    //  const {snippet:{title, thumbnails:{default:{url}}}} = video;
-  const {
+  //const {snippet:{title, thumbnails:{default:{url}}}} = video;
+    const {
     snippet: { title, description }, id: { videoId }
   } = video;  
        

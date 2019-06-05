@@ -1,6 +1,6 @@
 import React from 'react'
 import './style/video_list.css'
-import VideoKitem from './video_Kitem'
+import VideoKitem from './video_item'
 
 
  export default function VideoKlist ({videos}) {
