@@ -15,14 +15,13 @@ const API_KEY = 'AIzaSyBYhtoV6rW9kAGuxUPuFaYlK6JVRppseY4'
 export const requestVideos = (term) => (dispatch) => {
     
     YTSearch({key: API_KEY, term}, videos => {
-        console.log('videos',videos)
+        
         const payload = {
             videos,
             selectedVideo: videos[0]
-           
         }
         dispatch({type: REQUEST_VIDEOS, payload})
-        console.log('addha',videos[0])
+         
     })
 }
  
@@ -36,8 +35,8 @@ export function selectVideo(video) {
 The following is to get another fetch kids specific videos from the API; it needs 
 to be modified to add more parameters[options]
 */
-/*fetch kids video
-const options = {
+//fetch kids video
+const term = {
     part:'snippet',
     q:'children',
     type:'video',
@@ -45,27 +44,28 @@ const options = {
     safeSearch:'restrict',
     relatedToVideoId:'kwgQ3t7X3JQ',
     maxResults:'10'
-    =========================================================================
 } 
-*/
+
  export const requestKvideos = (term) => (dispatch) => {
     
     YTSearch({key: API_KEY, term}, videos => {
+         
+    
         const payload = {
             videos,
-            selectedKvideo: videos[0]     
+            selectedKvideo: videos[0]
         }
-         console.log(videos[0])
-        dispatch({type: REQUEST_KVIDEOS, payload })       
+
+        dispatch({type: REQUEST_KVIDEOS, payload })
+        
     })
 }
 
 export function selectKvideo(video) {
-  
+   
     return { type: SELECT_KVIDEO, payload: video}
       
-  
-}
+} 
 
 
 /* ===============================================
@@ -88,7 +88,7 @@ export const requestFvideos = () => (dispatch) => {
                
                 
             .then(videos => {
-                console.log(videos)
+          
              const payload = {
                  videos,
                  selectedFvideo: videos[0]
@@ -102,7 +102,7 @@ export function selectFvideo(video) {
         return { type: SELECT_FVIDEO, payload: video}
  } 
 
- /*
+ 
  export const addSvideos = (term) => (dispatch) => {
     
     YTSearch({key: API_KEY, term}, videos => {
@@ -152,4 +152,4 @@ export function selectFvideo(video) {
              })
         })
     }
-*/
+

@@ -27,17 +27,14 @@ class WATCH extends Component {
              <SearchBar />
         </section >
         <section className="main">
-            <VideoDetail video={selectedVideo} />
+            <VideoDetail video={selectedVideo} />  
             <VideoList videos={videos} />
+            <SaveVideo />
         </section> 
-        <section className="saveVideo">
-             <SaveVideo />
-        </section>
       </div>
     );
   }
 }
- 
 function mapStateToProps(state) {
   
   return {
@@ -45,7 +42,5 @@ function mapStateToProps(state) {
     selectedVideo: state.video.selectedVideo
   };
 }
-
-
 
 export default connect(mapStateToProps, actions)(WATCH);
