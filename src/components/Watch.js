@@ -14,6 +14,7 @@ class WATCH extends Component {
   }
   render()  {
     const {videos, selectedVideo} = this.props;
+      console.log(selectedVideo)
      
     if (!videos || !selectedVideo) {
       return (

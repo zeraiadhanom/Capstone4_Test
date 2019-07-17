@@ -30,11 +30,6 @@ export function selectVideo(video) {
     return { type: SELECT_VIDEO, payload: video}
 }
 
-/*
-=========================================================================
-The following is to get another fetch kids specific videos from the API; it needs 
-to be modified to add more parameters[options]
-*/
 //fetch kids video
 const term = {
     part:'snippet',
@@ -94,6 +89,7 @@ export const requestFvideos = () => (dispatch) => {
                  selectedFvideo: videos[0]
              }
              dispatch({type: REQUEST_FVIDEOS, payload})
+             console.log('zeraxit')
 
 })
 }
@@ -123,7 +119,7 @@ export function selectFvideo(video) {
                         "thumbnails": videos[0].snippet.thumbnails.default.url
                     },
                     id: {
-                        "videoId" : videos[0].id.videoId
+                        "_id" : videos[0].id.videoId
                     }
                 }
              )

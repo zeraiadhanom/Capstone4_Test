@@ -11,7 +11,6 @@ export default function(state = {}, action) {
     case SELECT_VIDEO:
       return { ...state, selectedVideo: action.payload };
 
-
     case REQUEST_KVIDEOS:
       return {
         selectedKvideo: action.payload.selectedKvideo, 
@@ -21,7 +20,7 @@ export default function(state = {}, action) {
       return { ...state, selectedKvideo: action.payload };
     
     
-      case REQUEST_FVIDEOS:
+    case REQUEST_FVIDEOS:
          
           return {
             selectedFvideo: action.payload.selectedFvideo, 
@@ -32,15 +31,15 @@ export default function(state = {}, action) {
         return { ...state, selectedFvideo: action.payload }; 
 
       
-        case ADD_SVIDEO:
+     case ADD_SVIDEO:
          
           return {
-            selectedSVideo: action.payload.selectedSVideo, 
+            selectedSvideo: action.payload.selectedSvideo, 
             videos: action.payload.videos
           };
         
-     case SELECT_SVIDEO:     
-        return { ...state, selectedSVideo: action.payload }; 
+      case SELECT_SVIDEO:     
+        return { ...state, selectedSvideo: action.payload }; 
     }
     return state;
 }

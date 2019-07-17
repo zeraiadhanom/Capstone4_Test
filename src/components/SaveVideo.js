@@ -8,7 +8,7 @@ import './style/SaveVideo.css' ;
  
 class SaveVideo extends Component {
   componentWillMount() {
-  // this.props.addSvideos()
+  //this.props.addSvideos()
   
   }
   render()  {
@@ -25,13 +25,13 @@ class SaveVideo extends Component {
   }
 }
  
-function mapStateToProps(state) {
+ function mapStateToProps(state) {
   
   return {
-   // videos: state.video.videos,
+     videos: state.video.videos,
     selectedVideo: state.video.selectedVideo
   };
-}
+} 
 
 
 
