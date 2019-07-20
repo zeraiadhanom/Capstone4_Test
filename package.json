@@ -1,6 +1,10 @@
 {
   "name": "kidswatch",
   "version": "0.1.0",
+  "engines": {
+    "node": "v10.15.1"
+  },
+
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
