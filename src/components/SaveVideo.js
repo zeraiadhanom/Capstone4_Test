@@ -12,12 +12,10 @@ class SaveVideo extends Component {
   
   }
   render()  {
-    //const {selectedVideo} = this.props;
+    const {selectedVideo} = this.props;
     return (
       <div>
         <section className="save">
-           
-           
             <button onClick={() => this.SaveVideo()}>Save</button>
         </section>  
       </div>

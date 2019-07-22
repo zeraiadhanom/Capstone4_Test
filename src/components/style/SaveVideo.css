@@ -1,10 +1,15 @@
 
-.saveVideo {
 
-    margin-top: 90px;
-    background: black;
-    width: 200px;
-    border: 1px solid black;
+   .save {
 
-    border-radius: 20px;
-  }
+ width: 100px;
+ height: 30px;
+ border: 1px solid gray;
+ border-radius: 20px;
+ text-align: center;
+ padding-left: 95px;
+  } 
+
+ /* .save {
+    margin-top: 190px;
+  } */
